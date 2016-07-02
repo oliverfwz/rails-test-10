@@ -12,11 +12,13 @@
 
     img {
       max-width: 40px;
+      border-radius: 50%;
     }
   }
 
   .actions {
     .item {
+      margin-right: 10px;
       display: inline-block;
     }
   }
