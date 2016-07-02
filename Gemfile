@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim'
 gem 'simple_form'
 gem 'devise'
+gem "paperclip", "~> 5.0.0"
 
 group :development do
   gem 'html2slim'
