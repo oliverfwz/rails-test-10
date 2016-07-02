@@ -28,7 +28,7 @@ require 'paperclip/matchers'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, :type => :controller
   config.include FactoryGirl::Syntax::Methods
   config.include Paperclip::Shoulda::Matchers
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

@@ -1,0 +1,7 @@
+#comment-index-container
+  .container
+    .action-new
+      = link_to 'New Comment', new_comment_path, class: 'btn btn-primary btn-new-comment', remote: true
+    .comment-box
+      ul
+        = render 'comments/list', comments: @root_comments

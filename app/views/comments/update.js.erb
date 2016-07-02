@@ -1,0 +1,9 @@
+<% if @comment.errors.any? %>
+  BootstrapDialog.show({
+    title: "Message",
+    message: "<%= @comment.errors.full_messages.join('<br />').html_safe %>",
+    type: BootstrapDialog.TYPE_DEFAULT
+  });
+<% else %>
+  $(".form-comment<%= @comment.id %>").replaceWith("<%= escape_javascript(render partial: 'comments/item', locals: { comment: @comment }) %>") 
+<% end %>

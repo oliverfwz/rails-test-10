@@ -1,0 +1,9 @@
+<% if @result.present? %>
+  $("#comment_<%= @comment.id %>").remove();
+<% else %>
+  BootstrapDialog.show({
+    title: "Message",
+    message: "You can not delete this comment!",
+    type: BootstrapDialog.TYPE_DEFAULT
+  });
+<% end %>

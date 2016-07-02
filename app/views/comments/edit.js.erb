@@ -1,0 +1,9 @@
+<% if @result.present? %>
+  $("#comment_<%= @comment.id %>").replaceWith("<%= escape_javascript(render partial: 'comments/form', locals: { comment: @comment, parent_id: @parent_id }) %>")
+<% else %>
+  BootstrapDialog.show({
+    title: "Message",
+    message: "You can not edit this comment!",
+    type: BootstrapDialog.TYPE_DEFAULT
+  });
+<% end %>

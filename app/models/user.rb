@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   validates :name,   presence: true
 
+  has_many :comments
+
   has_attached_file :avatar,
     styles: { thumb: '150x150>' },
     default_url: "users/missing.png"

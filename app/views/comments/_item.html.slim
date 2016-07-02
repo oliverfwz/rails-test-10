@@ -1,0 +1,20 @@
+li.comments-item-container id="comment_#{comment.id}"
+  .comment-wrap
+    - user = comment.user
+    .user
+      = image_tag(user.avatar.url(:thumb))
+    .comment-content
+      .user-name
+        h4 = user.name
+      span = comment.message
+      .actions
+        .reply.item id="reply_#{comment.id}"
+          = link_to 'Reply', new_comment_path(parent: comment), class: 'reply', remote: true
+        .edit.item
+          = link_to 'Edit', edit_comment_path(comment), class: 'edit', remote: true
+        .destroy.item
+          = link_to('Delete', comment_path(comment), method: :delete, remote: true, data: { confirm: 'Are you sure you want to delete this product?'})
+
+  ul class="comment_#{comment.id}"
+    - if comment.children.present?
+      = render 'comments/list', comments: comment.children

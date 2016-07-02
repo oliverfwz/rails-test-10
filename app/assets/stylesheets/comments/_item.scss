@@ -1,0 +1,37 @@
+.comments-item-container {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 10px;
+  border-top: 1px solid #eee;
+
+  .user {
+    max-width: 50%;
+    min-width: 5%;
+    float: left;
+    margin-right: 10px;
+
+    img {
+      max-width: 40px;
+    }
+  }
+
+  .actions {
+    .item {
+      display: inline-block;
+    }
+  }
+
+  .comment-content {
+    width: 95%;
+    min-width: 50%;
+    max-width: 80%;
+    float: left;
+
+    .user-name {
+      h4 {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}

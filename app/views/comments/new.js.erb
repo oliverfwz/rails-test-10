@@ -1,0 +1,7 @@
+<% if @parent_id.present? %>
+  $("#reply_<%= @parent_id %> a").addClass('disabled');
+  $("#comment_<%= @parent_id %> .comment_<%= @parent_id %>").prepend("<%= escape_javascript(render partial: 'comments/form', locals: { comment: @comment, parent_id: @parent_id }) %>")
+<% else %>
+  $(".btn-new-comment").addClass('disabled');
+  $(".comment-box > ul").prepend("<%= escape_javascript(render partial: 'comments/form', locals: { comment: @comment, parent_id: '' }) %>")
+<% end %>

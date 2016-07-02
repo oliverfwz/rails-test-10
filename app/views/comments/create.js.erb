@@ -1,0 +1,17 @@
+<% if @comment.errors.any? %>
+  BootstrapDialog.show({
+    title: "Message",
+    message: "<%= @comment.errors.full_messages.join('<br />').html_safe %>",
+    type: BootstrapDialog.TYPE_DEFAULT
+  });
+<% else %>
+  <% if @comment.parent.present? %>
+    $("#comment_<%= @comment.parent.id %> .comment_<%= @comment.parent.id %> li.form-comment").remove();
+    $("#reply_<%= @comment.parent.id %> a").removeClass('disabled');
+    $("#comment_<%= @comment.parent.id %> .comment_<%= @comment.parent.id %>").prepend("<%= escape_javascript(render partial: 'comments/item', locals: { comment: @comment }) %>")
+  <% else %>
+    $(".comment-box > ul li.form-comment").remove()
+    $(".btn-new-comment").removeClass('disabled');
+    $(".comment-box > ul").prepend("<%= escape_javascript(render partial: 'comments/item', locals: { comment: @comment }) %>")
+  <% end %>  
+<% end %>

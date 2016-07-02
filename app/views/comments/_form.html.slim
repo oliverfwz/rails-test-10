@@ -1,0 +1,6 @@
+li class="form-comment#{@comment.id}"
+  .comments-form-container
+    = simple_form_for @comment, remote: true do |f|
+      = f.input :message, label: false, placeholder: 'Enter your comment here!'
+      = f.hidden_field :parent_id, value: parent_id
+      = f.submit 'Send', class: "btn btn-primary"
