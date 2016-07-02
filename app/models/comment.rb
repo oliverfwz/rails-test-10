@@ -7,16 +7,6 @@ class Comment < ActiveRecord::Base
 
   validates :message, presence: true
 
-  def descendants
-    children.each_with_object(children.to_a) {|child, arr|
-      arr.concat child.descendants
-    }.uniq
-  end
-
-  def self_and_descendants
-    [self] + descendants
-  end
-
   private
 
   def self.roots
