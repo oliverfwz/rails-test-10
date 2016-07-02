@@ -21,6 +21,12 @@
       margin-right: 10px;
       display: inline-block;
     }
+
+    .reply {
+      a.disabled {
+        pointer-events: none;
+      }
+    }
   }
 
   .comment-content {
