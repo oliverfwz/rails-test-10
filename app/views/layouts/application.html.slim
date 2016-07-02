@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    = render 'layouts/head'
+  body
+    header
+      = render 'layouts/header'
+    main
+      = yield
+      == yield :popup
+    footer
+      = render 'layouts/footer'

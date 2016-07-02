@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: test-10_development
+
+test:
+  <<: *default
+  database: test-10_test
