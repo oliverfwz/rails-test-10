@@ -1,0 +1,13 @@
+#system-message.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" 
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-label="Close" data-dismiss="modal" type="button" 
+          span aria-hidden="true"  &times;
+        h4#myModalLabel.modal-title.text-center Message
+      .modal-body
+        - flash.each do |type, message|
+         = simple_format message
+coffee:
+  if $('#system-message .modal-body p').first().text() != ''
+    $('#system-message').modal('show')

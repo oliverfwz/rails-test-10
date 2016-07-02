@@ -13,6 +13,7 @@ gem 'slim'
 gem 'simple_form'
 gem 'devise'
 gem "paperclip", "~> 5.0.0"
+gem 'bootstrap_flash_messages'
 
 group :development do
   gem 'html2slim'
